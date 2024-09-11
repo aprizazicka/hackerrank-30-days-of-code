@@ -1,0 +1,18 @@
+n = int(input())
+phoneBook = {}
+
+# First loop to gather phonebook entries
+for _ in range(n):
+    key, value = input().split()
+    phoneBook[key] = value
+
+# Second loop to query the phonebook
+while True:
+    try:
+        name = input()
+        if name in phoneBook:
+            print(f"{name}={phoneBook[name]}")
+        else:
+            print("Not found")
+    except EOFError:
+        break
